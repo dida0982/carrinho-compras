@@ -105,9 +105,29 @@ Durante o desenvolvimento deste projeto, foram aplicados e consolidados os segui
 
 ---
 
+**Instrutores:**
+
+**Jacqueline Oliveira**
+
+<img src="https://github.com/jacqueline-oliveira.png" width="150" alt="Foto de perfil">
+
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/jacqueline-oliveira)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jacqueline-r-oliveira/)
+
+**Rodrigo da Silva Ferreira Caneppele**
+
+<img src="https://github.com/rcaneppele.png" width="150" alt="Foto de perfil">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rcaneppele/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rcaneppele)
+
+---
+
 ## 👤 Autor
 
-Desenvolvido por **Guilherme**
+**Guilherme Barros**
+
+<img src="https://github.com/dida0982.png" width="150" alt="Foto de perfil">
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/guilherme-barros-6a0369209/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dida0982)
