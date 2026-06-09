@@ -1,0 +1,578 @@
+/* ===================================================
+   VARIÁVEIS CSS — Design Tokens
+   =================================================== */
+:root {
+  --color-accent: #1875E8;
+  --color-accent-hover: #1260C4;
+  --color-accent-glow: rgba(24, 117, 232, 0.35);
+  --color-dark: #01080E;
+  --color-dark-hover: #0d1a24;
+  --color-dark-glow: rgba(1, 8, 14, 0.45);
+  --color-white: #ffffff;
+  --color-border: #1875E8;
+  --color-text-primary: #01080E;
+  --color-text-muted: #6b7280;
+  --color-error: #dc2626;
+  --color-success: #16a34a;
+
+  --font-heading: 'Chakra Petch', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.25rem;
+
+  --shadow-accent: 0 0 24px var(--color-accent-glow);
+  --shadow-dark: 0 0 24px var(--color-dark-glow);
+  --shadow-card: 0 0 70px rgba(2, 189, 255, 0.30);
+
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.35s ease;
+}
+
+/* ===================================================
+   RESET & BASE
+   =================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    linear-gradient(to bottom,
+      var(--color-dark) 10%,
+      var(--color-white) 10%,
+      var(--color-white) 90%,
+      var(--color-dark) 90%);
+  padding: 7vh 8vw 5vh;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utilitário para acessibilidade — esconder visualmente mas manter para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================================
+   LAYOUT PRINCIPAL
+   =================================================== */
+.main-layout {
+  position: relative;
+  min-height: 100%;
+  padding: 5rem 6.5rem;
+  background: var(--color-white) url('../assets/oculos.png') no-repeat left bottom;
+  background-size: auto 40%;
+  background-position: left -20px bottom -40px;
+  filter: var(--shadow-card);
+
+  display: grid;
+  grid-template-columns: 1.375fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 5rem;
+}
+
+/* Grafismo decorativo no topo */
+.grafismo {
+  position: absolute;
+  top: -1rem;
+  left: 6.5rem;
+  width: 31.9375rem;
+  height: 2.0625rem;
+  background-image: url('../assets/grafismo-azul.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+/* ===================================================
+   TIPOGRAFIA
+   =================================================== */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* ===================================================
+   SEÇÃO DO FORMULÁRIO
+   =================================================== */
+.form-section {
+  padding-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* ===================================================
+   GRUPOS DE CAMPO
+   =================================================== */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.field-label {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+/* ===================================================
+   SELECT CUSTOMIZADO
+   =================================================== */
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 12px;
+  background-image: url('../assets/arrow-down.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  transition: transform var(--transition-base);
+}
+
+.select-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 24.75rem;
+  max-width: 100%;
+  height: 3.5rem;
+  padding: 1rem 3rem 1rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 400;
+  cursor: pointer;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.select-input:hover {
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 3px rgba(24, 117, 232, 0.12);
+}
+
+.select-input:focus {
+  outline: none;
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 3px rgba(24, 117, 232, 0.20);
+}
+
+/* ===================================================
+   INPUT DE QUANTIDADE
+   =================================================== */
+.quantity-input {
+  display: flex;
+  height: 3.5rem;
+  width: 5rem;
+  padding: 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 400;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-input:hover {
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 3px rgba(24, 117, 232, 0.12);
+}
+
+.quantity-input:focus {
+  outline: none;
+  border-color: var(--color-accent-hover);
+  box-shadow: 0 0 0 3px rgba(24, 117, 232, 0.20);
+}
+
+.quantity-input.error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* ===================================================
+   PARTE INFERIOR DO FORMULÁRIO
+   =================================================== */
+.form-bottom {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===================================================
+   BOTÕES
+   =================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 11rem;
+  height: 3.25rem;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base),
+    opacity var(--transition-base);
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.btn-add {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-accent);
+}
+
+.btn-add:hover {
+  background: var(--color-accent-hover);
+  box-shadow: 0 0 32px var(--color-accent-glow);
+}
+
+.btn-clear {
+  background: var(--color-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-dark);
+}
+
+.btn-clear:hover {
+  background: var(--color-dark-hover);
+  box-shadow: 0 0 32px var(--color-dark-glow);
+}
+
+/* ===================================================
+   FEEDBACK DO FORMULÁRIO
+   =================================================== */
+.form-feedback {
+  min-height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: opacity var(--transition-base);
+}
+
+.form-feedback.success {
+  color: var(--color-success);
+}
+
+.form-feedback.error {
+  color: var(--color-error);
+}
+
+/* ===================================================
+   SEÇÃO DO CARRINHO
+   =================================================== */
+.cart-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding-top: 0.5rem;
+}
+
+.cart-bg-image {
+  position: absolute;
+  bottom: 0;
+  right: -2rem;
+  width: 60%;
+  max-width: 220px;
+  opacity: 0.6;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cart-header img {
+  flex-shrink: 0;
+}
+
+.cart-title {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+/* ===================================================
+   LISTA DE PRODUTOS
+   =================================================== */
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  list-style: none;
+  min-height: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: rgba(24, 117, 232, 0.04);
+  border-left: 3px solid var(--color-accent);
+  animation: slide-in 0.3s ease forwards;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cart-item .qty {
+  color: var(--color-accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cart-item .name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cart-item .price {
+  color: var(--color-accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Estado vazio do carrinho */
+.cart-empty {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  padding: 0.5rem 0;
+}
+
+/* ===================================================
+   DIVISÓRIA E TOTAL
+   =================================================== */
+.cart-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #000 60%, transparent);
+}
+
+.cart-total {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* ===================================================
+   RESPONSIVIDADE
+   =================================================== */
+
+/* Notebook / Telas menores que 1200px */
+@media (max-width: 1200px) {
+  .main-layout {
+    padding: 4rem 4rem;
+    column-gap: 3rem;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+}
+
+/* Tablet — layout de 1 coluna */
+@media (max-width: 900px) {
+  body {
+    background:
+      linear-gradient(to bottom,
+        var(--color-dark) 6%,
+        var(--color-white) 6%,
+        var(--color-white) 94%,
+        var(--color-dark) 94%);
+    padding: 4vh 5vw 4vh;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    padding: 3.5rem 2.5rem;
+    background-position: right -60px bottom -30px;
+    background-size: auto 25%;
+  }
+
+  .grafismo {
+    left: 2.5rem;
+    width: 60%;
+    max-width: 20rem;
+  }
+
+  .form-section {
+    padding-bottom: 2.5rem;
+  }
+
+  .cart-section {
+    border-top: 1px solid rgba(24, 117, 232, 0.15);
+    padding-top: 2rem;
+  }
+
+  .cart-bg-image {
+    right: 0;
+    opacity: 0.4;
+    max-width: 160px;
+  }
+}
+
+/* Smartphone grande */
+@media (max-width: 600px) {
+  body {
+    padding: 3vh 4vw;
+  }
+
+  .main-layout {
+    padding: 2.5rem 1.5rem;
+    background-image: none;
+  }
+
+  .page-title {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+    margin-bottom: 1.75rem;
+  }
+
+  .select-input {
+    width: 100%;
+  }
+
+  .select-wrapper {
+    width: 100%;
+  }
+
+  .form-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .btn {
+    flex: 1;
+    min-width: unset;
+    font-size: 1.1rem;
+  }
+
+  .cart-total {
+    font-size: 1.625rem;
+  }
+}
+
+/* Smartphone pequeno */
+@media (max-width: 400px) {
+  .main-layout {
+    padding: 2rem 1.25rem;
+  }
+
+  .field-label {
+    font-size: 1.25rem;
+  }
+
+  .cart-title {
+    font-size: 1.25rem;
+  }
+}
