@@ -1,4 +1,6 @@
-
+let totaGelral = 0;
+document.getElementById( 'lista-produtos' ).innerHTML = '';
+document.getElementById( 'valor-total' ).textContent = 'R$ 0';
 
 function adicionar ()
 {
@@ -12,6 +14,9 @@ function adicionar ()
     <section class="carrinho__produtos__produto">
     <span class="texto-azul">${ quantidade }x</span> ${ nomeProduto } <span class="texto-azul">R$${ preco }</span>
     </section>`;
+    totaGelral = totaGelral + preco;
+    let campoTotal = document.getElementById('valor-total');
+    campoTotal.textContent = `R$ ${ totaGelral }`;
 }
 
 function  limpar() {
