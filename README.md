@@ -9,7 +9,7 @@ Aplicação web interativa de carrinho de compras, desenvolvida com HTML5, CSS3 
 
 ## 📸 Demonstração
 
-> _Deploy disponível em:_ `[adicione o link aqui após publicar no GitHub Pages]`
+> _Deploy disponível em:_ `[Ainda não hospedei o site]`
 
 ---
 
