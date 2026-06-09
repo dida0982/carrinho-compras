@@ -1,5 +1,8 @@
 # 🛒 Carrinho de Compras
 
+<img width="493" height="860" alt="image" src="https://github.com/user-attachments/assets/bf461462-0964-45d8-b24b-8d5ff9aeac00" />
+
+
 Aplicação web interativa de carrinho de compras, desenvolvida com HTML5, CSS3 e JavaScript puro (Vanilla JS). Permite selecionar produtos, definir quantidades, visualizar itens no carrinho e acompanhar o total em tempo real.
 
 ---
