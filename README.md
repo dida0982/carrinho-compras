@@ -67,7 +67,7 @@ Apenas um navegador moderno. Não há dependências externas ou build necessári
 
 ```bash
 # 1. Clone o repositório
-git clone https://github.com/seu-usuario/carrinho-compras.git
+git clone https://github.com/dida0982/carrinho-compras.git
 
 # 2. Acesse a pasta do projeto
 cd carrinho-compras
