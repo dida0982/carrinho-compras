@@ -9,7 +9,7 @@ Aplicação web interativa de carrinho de compras, desenvolvida com HTML5, CSS3 
 
 ## 📸 Demonstração
 
-> Page disponível em: `https://carrinho-compras-opal.vercel.app/`
+> Page disponível em: https://carrinho-compras-opal.vercel.app/
 
 ---
 
